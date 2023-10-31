@@ -2,6 +2,8 @@ package com.gp.Service;
 
 public interface EmployeesService {
 	
+	String signIn(String employeeId, String password);
+	
 	void sendRequestToIncreaseProductQuantity(long productId, int quantity);
 	
 	
@@ -10,6 +12,8 @@ public interface EmployeesService {
 	void unlockUserAccount(long userId);
 	
 	void editEmployeePassword(long employeeId, String newPassword);
+	 
+	
 	
 
 

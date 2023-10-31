@@ -11,24 +11,47 @@ public class Employees {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "emp_id")
-	 private int empId;
-	
+	private int empId;
+
 	@Column(name = "user_name")
-	 private String userName;
-	
+	private String userName;
+
 	@Column(name = "email_id")
-	 private String emailId;
-	
-	 private String password;
-	 
-	 @Column(name = "first_name")
-	 private String firstName;
-	 
-	 @Column(name = "last_name")
-	 private String lastName;
-	 
-	 @Column(name = "registration_date")
-	 private String registrationDate;
+	private String emailId;
+
+	private String password;
+
+	@Column(name = "first_name")
+	private String firstName;
+
+	@Column(name = "last_name")
+	private String lastName;
+
+	@Column(name = "registration_date")
+	private String registrationDate;
+
+	private boolean firstLogin;
+
+	public boolean isFirstLogin() {
+		return firstLogin;
+	}
+
+	public Employees(int empId, String userName, String emailId, String password, String firstName, String lastName,
+			String registrationDate, boolean firstLogin) {
+		super();
+		this.empId = empId;
+		this.userName = userName;
+		this.emailId = emailId;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.registrationDate = registrationDate;
+		this.firstLogin = firstLogin;
+	}
+
+	public void setFirstLogin(boolean firstLogin) {
+		this.firstLogin = firstLogin;
+	}
 
 	public int getEmpId() {
 		return empId;
@@ -90,7 +113,7 @@ public class Employees {
 	public String toString() {
 		return "Employees [empId=" + empId + ", userName=" + userName + ", emailId=" + emailId + ", password="
 				+ password + ", firstName=" + firstName + ", lastName=" + lastName + ", registrationDate="
-				+ registrationDate + "]";
+				+ registrationDate + ", firstLogin=" + firstLogin + "]";
 	}
 
 	public Employees(int empId, String userName, String emailId, String password, String firstName, String lastName,
@@ -109,7 +132,5 @@ public class Employees {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	 
-	 
 
 }
